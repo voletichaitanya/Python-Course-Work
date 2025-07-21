@@ -1,14 +1,16 @@
+# BOOK store
+
 # Taking input
 
-b_id = int(input("Enter Book ID: "))           # unique book ID
+b_id = int(input("Enter Book ID: "))           #  book ID
 title = input("Enter Book Name: ")             # book title
 price = float(input("Enter Book Price: "))     # book price
 
-# categories as list
+# categories list
 
 cats = input("Enter Categories (comma-separated): ").split(',')
 
-# stock as tuple (available, sold)
+# tuple (available, sold)
 
 avail = int(input("Enter Available Stock: "))
 sold = int(input("Enter Sold Stock: "))

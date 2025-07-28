@@ -40,6 +40,15 @@ for i in items:
     else:
         print(f"{i} is not available")
 
+# 4. Nested Loop Example: Printing a multiplication table
+print("---- Multiplication Table ----")
+n = int(input("Enter a number to print its multiplication table up to 5: "))
+
+for i in range(1, n + 1):
+    for j in range(1, 6):
+        print(f"{i} x {j} = {i * j}")
+    print("-" * 15)  # separator between tables
+
 # WHILE LOOP EXAMPLE
 # Real-Time Scenario: Limiting Login Attempts
 

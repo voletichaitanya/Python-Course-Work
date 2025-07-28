@@ -1,8 +1,9 @@
-def generate_sorted_list(n):
-    if n == 1:
-        return [1]
-    else:
-        return generate_sorted_list(n - 1) + [n]
+def display(s,ind):
+    if ind == -1:
+        return
+    print(s[ind])
+    display(s,ind-1)
 
-numbers = generate_sorted_list(12)
-print(numbers)
+
+s='HELLO BACCHE'
+display(s,len(s)-1)

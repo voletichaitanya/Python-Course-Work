@@ -53,3 +53,7 @@ print(subs)
 
 pattern = re.search(r'[a-z]*[0-9]$','hello world7')
 print(pattern.group() if pattern else "No Pattern")
+print()
+
+boundary = re.findall(r'\b\d{2}\b','34 23 52 7  89 76 67 344 23 879 456 987 234')
+print(boundary)

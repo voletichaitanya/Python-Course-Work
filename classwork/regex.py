@@ -57,3 +57,9 @@ print()
 
 boundary = re.findall(r'\b\d{2}\b','34 23 52 7  89 76 67 344 23 879 456 987 234')
 print(boundary)
+
+
+# fullname = r'^[A-Za-z]{2,25} ( [A-Za-z]{2,25})+$'    chaitanya voleti
+# email_pattern = r'^[a-zA-Z0-9._]+@[0-9a-zA-Z]+\.[a-zA-Z]{2,3}$'  chaitu@gmail.com
+# phone_number = r'^(?:\+91|0)?[6-9]\d(9)$'
+# password = r'^(?=.*[A-Z]) (?=.*[a-z]) (?=.*\d) (?=.*[@$!%*?&]) [A-Za-z\d@$!%*?&] {8,}$'

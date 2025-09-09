@@ -1,4 +1,4 @@
-'''import sys
+import sys
 print(sys.path)
 print(sys.argv)
 print(sys.path)
@@ -74,7 +74,6 @@ from itertools import permutations,combinations
 
 p = print(list(permutations('abc',2)))
 c = print(list(combinations('abc',2)))
-'''
 
 from datetime import date , time , datetime , timedelta
 
@@ -106,7 +105,6 @@ print(now.strftime('%d %b, %Y  %H : %M : %M'))
 print(now.strftime('%d %b, %Y  %H : %M : %M   %p' ))
 print(now.strftime('%a %d %b, %Y  %H : %M : %M '))
 print(now.strftime('%A %d %b, %Y  %H : %M : %M '))
-
 fdate = today - timedelta(days=7)
 ftime = now - timedelta(minutes=30)
 print(fdate,ftime)

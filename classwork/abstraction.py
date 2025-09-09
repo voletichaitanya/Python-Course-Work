@@ -1,4 +1,4 @@
-'''from abc import ABC, abstractmethod
+from abc import ABC, abstractmethod
 
 class Bankaccount(ABC):
     def deposit(self):
@@ -53,7 +53,7 @@ swathi = MedicineOrder()
 
 rasool.process_order()
 chaitu.process_order()
-swathi.process_order()'''
+swathi.process_order()
 
 
 

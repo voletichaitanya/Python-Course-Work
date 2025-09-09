@@ -1,65 +1,52 @@
 import re
-res = re.match(r'[a-z]','hello world')
-print(res.group() if res else "No Pattern")
+#re.match() "Checks if the pattern matches only at the start of the string."
+result=re.match(r'[a-z]','hello world') 
+o=re.match(r"\d",'12hello world')
 
-res1 = re.match(r'[A-Z]+','Hello World')
-print(res1.group() if res1 else "No Pattern")
-
-res2 = re.match(r'\d+','188hello world')
-print(res2.group() if res2 else "No Pattern")
-
-res3 = re.match(r'\d{2}','188hello world')
-print(res3.group() if res3 else "No Pattern")
-
-res4 = re.match(r'[0-9]{2}','ds-da-15-14')
-print(res4.group() if res4 else "No Pattern")
+print(result.group() if result else 'No Match')
+print(o.group() if result else 'No Match')
 
 
-find = re.findall(r'[0-9]{2}','PFS-30 & PFS-31 & ds-da-15-14')
-print(find)
+#re.search() "Searches for the first occurrence of the pattern anywhere in the string."
+r=re.search(r'[0-9]{2}','ds-da-14-15')
+m=re.search(r'[a-z]*[0-9]$','hi234402')
+x=re.search(r'h?i','hii')
+print(r.group() if result else 'No Match')
+print(m.group() if result else 'No Match')
+print(x.group() if result else 'No Match')
 
-print()
-finditer = re.finditer(r'[0-9]{2,}','46 16 74PFS- 14 30 & PFS-31 & ds-da-15-14')
+#re.findall() 'Returns all matches in a list.'
+a=re.findall(r'[0-9]{2}','da-ds-14-15')
+print(a)
+g=re.findall(r'h..','hot hit hat hee hii hurry')
+print(g)
+y=re.findall(r'\b\d{4}\b','34 56 32 534 23 42 22 34 3244 23 12 233423 23234 1234')
+print(y)
 
-for i in finditer:
+#re.finditer() 'Returns an iterator of match objects.'
+b=re.finditer(r'[0-9]{2}','pfs-30 & pfs-31 ds-da-14-15')
+for i in b:
     print(i.group(),i.start())
 
-print()
-fullmatchs = re.fullmatch(r'(aeiou)+','aeiou')
-print(fullmatchs.group())
-print()
+#re.fullmatch() 'Checks if the entire string matches the pattern.'
+c = re.fullmatch(r'[0-9]{2,8}', '34567890')
+d = re.fullmatch(r'(aeiou)+', 'aeiou')
+e= re.fullmatch(r'(aeiou)*', '')
+f=re.fullmatch(r'^[6-9]\d{9}','9876542323')
 
-phone = re.fullmatch(r'^[6-9]\d{9}','9876543210')
-print(phone.group() if phone else "No Pattern")
-print()
-
-python = re.findall(r'p..h.n','python ptyhjn perhkn pytxon')
-print(python)
-
-
-space = re.findall(r'\s\s\w','  hello  hii  how  are  you df')
-print(space)
-print()
-
-split = re.split(r'[,;"-]','python,pythonx;pythonvk"psxhin-python pthon')
-print(split)
-print()
-
-sub = re.sub(r'[aeiouAEIOU]',' *0* ','python programming chaitanya')
-print(sub)
-
-subs = re.sub(r'[A-Z]','*','PyJthon pNrJDrammSing chaEiGtSGaHnya')
-print(subs)
-
-pattern = re.search(r'[a-z]*[0-9]$','hello world7')
-print(pattern.group() if pattern else "No Pattern")
-print()
-
-boundary = re.findall(r'\b\d{2}\b','34 23 52 7  89 76 67 344 23 879 456 987 234')
-print(boundary)
+print(c.group() if c else 'No Match')
+print(d.group() if d else 'No Match')
+print(e.group() if e else 'No Match')
+print(f.group() if f else 'No Match')
 
 
-# fullname = r'^[A-Za-z]{2,25} ( [A-Za-z]{2,25})+$'    chaitanya voleti
-# email_pattern = r'^[a-zA-Z0-9._]+@[0-9a-zA-Z]+\.[a-zA-Z]{2,3}$'  chaitu@gmail.com
-# phone_number = r'^(?:\+91|0)?[6-9]\d(9)$'
-# password = r'^(?=.*[A-Z]) (?=.*[a-z]) (?=.*\d) (?=.*[@$!%*?&]) [A-Za-z\d@$!%*?&] {8,}$'
+#re.split() 'Splits a string at each match.'
+text = "apple, banana; orange - grape"
+t = re.split(r"[,; -]+", text)
+print(t)
+
+#re.sub() 'Replaces matches with another string.
+k=re.sub(r'[aeiouAEIOU]','*0*','Python Programming Language')
+l=re.sub(r'[A-Z]','-','Python Programming Language')
+print(k)
+print(l)

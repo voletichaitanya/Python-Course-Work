@@ -1,33 +1,75 @@
-try :
-    file = open('app.py','r+')
-except FileNotFoundError:
-    print('the file does not exists')
+try:
+    file=open('demo.txt','r')
+
+except Exception as e:
+    print(f'File is not there{e}')
+
 else:
+    content = file.read() # Reads the entire content
     file.seek(0)
-    read = file.read()
-    print(f"\nFile Content using read() : \n{read}")
+    lines = file.readlines() # Reads all lines into a list
     file.seek(0)
-    readlines = file.readlines()
-    file.seek(0)
-    print(f"\n File Content is using readlines() : \n{readlines}")
-    readline = file.readline()
-    print(f"\n File Content is using readline() : \n{readline}")
-    file.seek(0,2)
-    writefiles=file.write("\n\nchaitanya\nrasool\nsriram\nvarun")
-    print(writefiles)
-finally :
+    line = file.readline() # Reads a single line
+    print(f'\nFile Content using read():\n{content}')
+    print(f'\nFile Content using readlines():\n{lines}')
+    print(f'\nFile Content using readline():\n{line}')
+
+finally:
     file.close()
-    print("File closed")
 
+try:
+    file=open('abc.txt','w')
 
-try :
-    file = open('list.py','w+')
-except FileNotFoundError:
-    print("File not exixts")
+except Exception as e:
+    print(f'File is not there{e}')
+
 else:
-    file.write("monday we have exam\n")
+    file.write('Monday is a holiday')
+    file.write('Samanth is a independent women!!')
+finally:
+    file.close()
+
+
+try:
+    file=open('abc.txt','r+')
+
+except Exception as e:
+    print(f'File is not there{e}')
+
+else:
+    file.write('Monday is a holiday')
+    file.write('Samanth is a independent women!!')
     file.seek(0)
     print(file.read())
-    file.close()
 finally:
-    print("resst of the code")
+    file.close()
+
+
+try:
+    file=open('abc.txt','w+')
+
+except Exception as e:
+    print(f'File is not there{e}')
+
+else:
+    file.write('Monday is a holiday')
+    file.write('Samanth is a independent women!!')
+    file.seek(0)
+    print(file.read())
+finally:
+    file.close()
+
+try:
+    file=open('abc.txt','a+')
+
+except Exception as e:
+    print(f'File is not there{e}')
+
+else:
+    file.write('Monday is a holiday')
+    file.write('Samanth is a independent women!!')
+    file.write('sam jam!!')
+    file.seek(0)
+    print(file.read())
+finally:
+    file.close()
